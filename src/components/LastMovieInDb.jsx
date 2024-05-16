@@ -1,5 +1,4 @@
 import React from "react";
-import imagenFondo from "../assets/mandalorian.jpg";
 
 export function LastMovieInDb() {
   return (
@@ -12,12 +11,12 @@ export function LastMovieInDb() {
         </div>
         <div className="card-body">
           <div className="text-center">
-            <img
+            {/* <img 
               className="img-fluid px-3 px-sm-4 mt-3 mb-4"
               style={{ width: 40 + "rem" }}
               src={imagenFondo}
               alt=" Star Wars - Mandalorian "
-            />
+            />*/}
           </div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,

@@ -16,7 +16,7 @@ const ulStyle = { display: "flex", justifyContent: "center" };
 export const NotFound = () => {
   return (
     <div style={divStyle}>
-      <img style={imgStyle} src={eric} alt="eric-img" />
+      <img style={imgStyle} src={eric} alt="eric-img"></img>
       <h1>¿Qué pasó, crack? ¿Te perdiste?</h1>
       <h4>Vení aca, que papá Eric te guía.</h4>
       <ul style={ulStyle}>

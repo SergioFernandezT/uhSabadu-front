@@ -1,4 +1,3 @@
-import React from "react";
 import { SideBar } from "./components/SideBar";
 import { GenresInDb } from "./components/GenresInDb";
 import { LastMovieInDb } from "./components/LastMovieInDb";
@@ -12,13 +11,13 @@ import { Route, Routes } from "react-router";
 import "./App.css";
 export function App() {
   return (
-    <React.Fragment>
+    <>
       <div id="wrapper">
         <SideBar />
         <div id="content-wrapper" className="d-flex flex-column">
           {/*<!-- Main Content -->*/}
           <div id="content">
-            <TopBar />
+            {/* <TopBar /> */}
             <Routes>
               <Route path="/" element={<ContentWrapper />} />
               <Route path="/allGenres" element={<GenresInDb />} />
@@ -30,6 +29,6 @@ export function App() {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 }

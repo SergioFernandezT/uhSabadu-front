@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../assets/logo-DH.png";
 import { Link } from "react-router-dom";
 
 export function SideBar() {
@@ -16,7 +15,7 @@ export function SideBar() {
           href="/"
         >
           <div className="sidebar-brand-icon">
-            <img className="w-100" src={image} alt="Digital House" />
+            {/* <img className="w-100" src={image} alt="Digital House" /> */}
           </div>
         </a>
 
