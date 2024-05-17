@@ -4,7 +4,7 @@ const ulStyle = { display: "flex", justifyContent: "center", listStyleType: "non
 
 export function Footer() {
 	return (
-		<footer className="sticky-footer bg-white ">
+		<footer className="sticky-footer">
 			<div className="container my-auto  flex flex-row items-center justify-around">
 				<section className="footer text-center my-auto">
 					<strong>CONTACTO</strong>
