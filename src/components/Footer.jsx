@@ -1,12 +1,14 @@
 import React from 'react';
 
+const ulStyle = { display: "flex", justifyContent: "center", listStyleType: "none" };
+
 export function Footer() {
 	return (
-		<footer className="sticky-footer bg-white">
-			<div className="container my-auto">
+		<footer className="sticky-footer bg-white ">
+			<div className="container my-auto  flex flex-row items-center justify-around">
 				<section className="footer text-center my-auto">
 					<strong>CONTACTO</strong>
-					<ul>
+					<ul style={ulStyle} className='flex-col items-center justify-center'>
 						<li>
 							Libertad N20 - Ciudad de Nieva - Jujuy
 						</li>
@@ -20,7 +22,7 @@ export function Footer() {
 				</section>
 				<section>
 					<strong>HORARIOS DE ATENCION</strong>
-					<ul>
+					<ul style={ulStyle} className='flex-col items-center justify-center'>
 						<li>
 							Lunes a Viernes 09:00 a 13:00 /
 							17:00 a 21:00
@@ -33,7 +35,7 @@ export function Footer() {
 				</section>
 				<section>
 					<strong>METODOS DE PAGO</strong>
-					<ul>
+					<ul style={ulStyle} className='flex-col items-center justify-center'>
 						<li>
 							Efectivo
 						</li>
