@@ -45,7 +45,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="marcas flex flex-row w-screen justify-around items-center gap">
+        <div className="marcas flex flex-row w-screen justify-around items-center my-11">
           <img className="w-1/5 h-fit" src="/images/marca1.png" alt="Marca 1" />
           <img className="w-1/5 h-fit" src="/images/marca2.png" alt="Marca 2" />
           <img className="w-1/5 h-fit" src="/images/marca3.png" alt="Marca 3" />
