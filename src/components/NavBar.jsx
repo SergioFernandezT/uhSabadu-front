@@ -25,7 +25,14 @@ export function NavBar() {
                 <hr className="sidebar-divider" />
 
                 <li className="nav-item">
-                    <Link className="nav-link" to="/allGenres">
+                    <Link className="nav-link" to="/products">
+                        <i className="fas fa-fw fa-chart-area"></i>
+                        <span>Productos</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link" to="">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Ofertas</span>
                     </Link>

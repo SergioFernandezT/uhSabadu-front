@@ -12,6 +12,7 @@ import { Header } from "./components/Header";
 import "./App.css";
 import Home from "./components/Home";
 import Login from "./components/users/Login";
+import ProductList from "./components/products/ProductList";
 import { NavBar } from "./components/NavBar";
 
 export function App() {
@@ -31,7 +32,7 @@ export function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/users/login" element={<Login />} />
-              <Route path="/allGenres" element={<GenresInDb />} />
+              <Route path="/products" element={<ProductList />} />
               <Route path="/lastMovie" element={<LastMovieInDb />} />
               <Route path="/allMovies" element={<ContentRowMovies />} />
               <Route path="*" element={<NotFound />} />
