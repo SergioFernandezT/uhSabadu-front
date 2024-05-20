@@ -14,6 +14,7 @@ import Home from "./components/Home";
 import Login from "./components/users/Login";
 import ProductList from "./components/products/ProductList";
 import { NavBar } from "./components/NavBar";
+import ProductDetail from "./components/products/ProductDetail";
 
 export function App() {
   return (
@@ -33,7 +34,8 @@ export function App() {
               <Route path="/" element={<Home />} />
               <Route path="/users/login" element={<Login />} />
               <Route path="/products" element={<ProductList />} />
-              <Route path="/lastMovie" element={<LastMovieInDb />} />
+              <Route path="/analitics" element={<ProductList />} />
+              <Route path= {"/products/detail/"+"*" } element={<ProductDetail />} />
               <Route path="/allMovies" element={<ContentRowMovies />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

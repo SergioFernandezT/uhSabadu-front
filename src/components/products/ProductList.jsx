@@ -111,8 +111,7 @@ export default function ProductList() {
                                 price={product.price}
                                 discount={product.discount}
                                 image={product.image}
-                            />
-                        );
+                            />);
                     })}
                 </section>
             </div>

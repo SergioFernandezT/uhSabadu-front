@@ -51,6 +51,13 @@ export function NavBar() {
                         <span>Arma tu PC</span>
                     </Link>
                 </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link" to="/analitics">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Analitics</span>
+                    </Link>
+                </li>
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
                     <Link className="nav-link" to="/404">
