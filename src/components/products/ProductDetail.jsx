@@ -1,41 +1,53 @@
-export default function ProductDetail({ name, image, description, discount, price }) {
-    // export default function ProductDetail() {
-    const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-            // let name = 'compu'
-            // let price= 10099
-            // let discount= 10
-            // let description= 'notebook hp 2023'
-            // let image= null
-      
-    return (
-        <main className="flex items-center justify-center my-12">
-            <article className="tarjetaProducto mr-32">
-                <figure>
-                    <img className="main_img_principal" src={`/images/products/${image}`}
-                        alt={`imagen de producto ${name}`} />
-                </figure>
-                <h3 className="name">
-                    {name}
-                </h3>
+export default function ProductDetail() {
 
-                <p>
-                    {description}
-                </p>
-            </article>
+    const { id } = useParams()
+    //  EL TO STRING FALLA
+    const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    // .replace('.', ',');
+    const pre = "111.1"
+    const [loading, setLoading] = useState(true);
+    let [product, setProduct] = useState({});
+    useEffect(() => {
+        fetch(`http://localhost:3737/api/products/detail/${id}`)
+            .then((res) => res.json())
+            .then((data) => setProduct(data))
+            .catch((e) => console.log(e))
+            .finally(() => setLoading(false));
+    }, []);
 
-            <article className="product-price_data">
-                <h2 className="price text-3xl line-through  text-teal-500">
-                    ${toThousand(price)}
-                </h2>
-                <h3 className="finalPrice text-5xl text-teal-600 font-semibold my-5">
-                    $ {toThousand(price * (100 - discount) / 100)}
-                </h3>
-                <span className="text-red-600 text-xl font-semibold mr-3">
-                    {discount} % OFF
-                </span>
-                <i className="fas fa-truck  text-teal-600"></i>
-                {/* <section className="agregarSection">
+    if (loading) return <p className="text-4xl text-center p-20">Loading...</p>;
+    if (product)
+        return (
+            <main className="flex items-center justify-center my-12">
+                <article className="tarjetaProducto mr-32">
+                    <figure>
+                        <img className="main_img_principal" src={`/images/products/${product.image}`}
+                            alt={`imagen de producto ${product.name}`} />
+                    </figure>
+                    <h3 className="name">
+                        {product.name}
+                    </h3>
+
+                    <p>
+                        {product.description}
+                    </p>
+                </article>
+
+                <article className="product-price_data">
+                    <h2 className="price text-3xl line-through  text-teal-500">
+                        ${toThousand(product.price)}
+                    </h2>
+                    <h3 className="finalPrice text-5xl text-teal-600 font-semibold my-5">
+                        $ {toThousand(product.price * (100 - product.discount) / 100)}
+                    </h3>
+                    <span className="text-red-600 text-xl font-semibold mr-3">
+                        {product.discount} % OFF
+                    </span>
+                    <i className="fas fa-truck  text-teal-600"></i>
+                    {/* <section className="agregarSection">
                         <script>
                             function irAproductCart() {
                                 window.location.href = "/products/productCart";
@@ -46,7 +58,7 @@ export default function ProductDetail({ name, image, description, discount, pric
 
                         </form>
                     </section> */}
-            </article>
-        </main>
-    );
+                </article>
+            </main>
+        );
 }

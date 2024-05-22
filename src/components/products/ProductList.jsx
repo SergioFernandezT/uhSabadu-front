@@ -1,104 +1,27 @@
 
 import ProductSmallCard from './ProductSmallCard';
-
-// const service = require("../../services/productService")
-// let AllProducts = service.list()
 import { useEffect, useState, useRef } from "react";
 
 export default function ProductList() {
 
-    // let [products, setProducts] = useState([]);
+    let [products, setProducts] = useState([]);
 
-    // useEffect(() => {
-    //     fetch("http://localhost:3737/api/products")
-    //         .then((res) => res.json())
-    //         .then((data) => setProducts(data.data))
-    //         .catch((e) => console.log(e));
-    // }, []);
+    useEffect(() => {
+        fetch("http://localhost:3737/api/products", {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                // 'Content-Type': 'text/plain',
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept': 'application/json'
+                // Aquí puedes incluir otras cabeceras requeridas por el servidor
+            }
+        })
+            .then((res) => res.json())
+            .then((data) => setProducts(data.data))
+            .catch((e) => console.log(e))
+    }, []);
 
-    let products = [
-        {
-            id: 2,
-            name: 'compu',
-            price: 10099,
-            discount: 10,
-            description: 'notebook hp 2023',
-            category_id: 1,
-            image: null
-        },
-        {
-            id: 2,
-            name: 'compu',
-            price: 10099,
-            discount: 10,
-            description: 'notebook hp 2023',
-            category_id: 1,
-            image: null
-        },
-        {
-            id: 2,
-            name: 'compu',
-            price: 10099,
-            discount: 10,
-            description: 'notebook hp 2023',
-            category_id: 1,
-            image: null
-        },
-        {
-            id: 2,
-            name: 'compu',
-            price: 10099,
-            discount: 10,
-            description: 'notebook hp 2023',
-            category_id: 1,
-            image: null
-        },
-        {
-            id: 2,
-            name: 'compu',
-            price: 10099,
-            discount: 10,
-            description: 'notebook hp 2023',
-            category_id: 1,
-            image: null
-        },
-        {
-            id: 2,
-            name: 'compu',
-            price: 10099,
-            discount: 10,
-            description: 'notebook hp 2023',
-            category_id: 1,
-            image: null
-        },
-        {
-            id: 2,
-            name: 'compu',
-            price: 10099,
-            discount: 10,
-            description: 'notebook hp 2023',
-            category_id: 1,
-            image: null
-        },
-        {
-            id: 2,
-            name: 'compu',
-            price: 10099,
-            discount: 10,
-            description: 'notebook hp 2023',
-            category_id: 1,
-            image: null
-        },
-        {
-            id: 2,
-            name: 'compu',
-            price: 10099,
-            discount: 10,
-            description: 'notebook hp 2023',
-            category_id: 1,
-            image: null
-        }
-    ]
     return (
         <main>
             <div className="cuerpo">
@@ -107,6 +30,7 @@ export default function ProductList() {
                         return (
                             <ProductSmallCard
                                 key={product.id}
+                                id={product.id}
                                 name={product.name}
                                 price={product.price}
                                 discount={product.discount}

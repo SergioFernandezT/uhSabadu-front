@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import { Genre } from './Genre'
+import ProductSmallCard from './products/ProductSmallCard'
 
 export class GenresInDb extends Component {
   constructor() {
     super()
     this.state = {
-      genresList: []
+      productsList: []
     }
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/api/genres')
+    fetch('http://localhost:3737/api/products')
       .then(res => res.json())
-      .then(genres => this.setState({ genresList: genres.data }))
+      .then(products => this.setState({ productsList: products.data }))
       .catch(error => console.log(error.message))
   }
 
@@ -26,12 +26,14 @@ export class GenresInDb extends Component {
           <div className="card-body">
             <div className="row">
 
-              {this.state.genresList.map((genre) => {
-                return <Genre
-                  key={genre.id}
-                  name={genre.name}
+              {this.state.productsList.map((product) => {
+                return <ProductSmallCard
+                key={product.id}
+                name={product.name}
+                price={product.price}
+                discount={product.discount}
+                image={product.image}
                 />
-
               })}
 
             </div>

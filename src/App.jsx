@@ -1,9 +1,3 @@
-import { SideBar } from "./components/SideBar";
-import { GenresInDb } from "./components/GenresInDb";
-import { LastMovieInDb } from "./components/LastMovieInDb";
-import { ContentRowMovies } from "./components/ContentRowMovies";
-import { ContentWrapper } from "./components/ContentWrapper";
-import { TopBar } from "./components/TopBar";
 import { Footer } from "./components/Footer";
 import { NotFound } from "./components/NotFound";
 import { Route, Routes } from "react-router";
@@ -12,9 +6,10 @@ import { Header } from "./components/Header";
 import "./App.css";
 import Home from "./components/Home";
 import Login from "./components/users/Login";
-import ProductList from "./components/products/ProductList";
 import { NavBar } from "./components/NavBar";
 import ProductDetail from "./components/products/ProductDetail";
+import ProductList from './components/products/ProductList';
+import Analitics from "./components/products/Analitics";
 
 export function App() {
   return (
@@ -34,9 +29,8 @@ export function App() {
               <Route path="/" element={<Home />} />
               <Route path="/users/login" element={<Login />} />
               <Route path="/products" element={<ProductList />} />
-              <Route path="/analitics" element={<ProductList />} />
-              <Route path= {"/products/detail/"+"*" } element={<ProductDetail />} />
-              <Route path="/allMovies" element={<ContentRowMovies />} />
+              <Route path="/analitics" element={<Analitics />} />
+              <Route path= '/products/detail/:id' element={<ProductDetail />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
