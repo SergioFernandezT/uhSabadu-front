@@ -10,6 +10,7 @@ import { NavBar } from "./components/NavBar";
 import ProductDetail from "./components/products/ProductDetail";
 import ProductList from './components/products/ProductList';
 import Analitics from "./components/products/Analitics";
+import Profile from "./components/users/Profile";
 
 export function App() {
   return (
@@ -28,6 +29,7 @@ export function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/users/login" element={<Login />} />
+              <Route path="/users/profile/:id" element={<Profile />} />
               <Route path="/products" element={<ProductList />} />
               <Route path="/analitics" element={<Analitics />} />
               <Route path= '/products/detail/:id' element={<ProductDetail />} />

@@ -16,7 +16,7 @@ export function NavBar() {
             {/*<!-- Nav Item - Dashboard -->*/}
             <li className="nav-item active">
                 <Link className="nav-link" to="/">
-                    <i className="fas fa-fw fa-tachometer-alt"></i>
+                    <i className="fa-solid fa-house"></i>
                     <span>Inicio</span>
                 </Link>
             </li>
@@ -26,7 +26,7 @@ export function NavBar() {
 
             <li className="nav-item">
                 <Link className="nav-link" to="/products">
-                    <i className="fas fa-fw fa-folder"></i>
+                    <i className="fa-solid fa-shop"></i>
                     <span>Productos</span>
                 </Link>
             </li>

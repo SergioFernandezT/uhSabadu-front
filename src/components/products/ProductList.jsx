@@ -11,12 +11,9 @@ export default function ProductList() {
             method: 'GET',
             mode: 'cors',
             headers: {
-                // 'Content-Type': 'text/plain',
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json',
                 'Accept': 'application/json'
-                // Aquí puedes incluir otras cabeceras requeridas por el servidor
-            },
-            body
+            }
         })
             .then((res) => res.json())
             .then((data) => setProducts(data.data))
