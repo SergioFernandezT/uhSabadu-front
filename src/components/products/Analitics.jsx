@@ -30,9 +30,9 @@ export default function Analitics() {
       <grid >
         <Link to="/products"> <h3 className="flex justify-center items-center">👉 Catalogo de productos</h3></Link>
         <div className='first-row flex items-center justify-center my-5 '>
-          <div className="cuerpo w-1/4 mr-14  bg-slate-50">
-            <grid className='rounded-t-sm'>
-              <h3 className='bg-orange-300 text-center font-bold'>Total de Productos</h3>
+          <div className="cuerpo w-1/4 mr-14 ">
+            <grid className='bg-slate-50'>
+              <h3 className='bg-orange-300 text-center font-bold rounded-t-xl'>Total de Productos</h3>
               {products}
             </grid>
           </div>
@@ -63,8 +63,8 @@ export default function Analitics() {
         </div>
         <div className='category-row flex items-center justify-center my-5 '>
           <grid className='first-row flex items-center justify-center w-11/12 '>
-            <div className="cuerpo w-1/3 bg-slate-50">
-              <h3 className='bg-yellow-400 text-center font-bold'>Productos por categoria</h3>
+            <div className="cuerpo w-1/3">
+              <h3 className='bg-yellow-400 text-center font-bold rounded-t-xl'>Productos por categoria</h3>
               {/* {totalCategories.map((product) => {
                 return ( */}
               <CategorySmallCard

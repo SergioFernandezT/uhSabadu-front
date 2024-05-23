@@ -15,7 +15,8 @@ export default function ProductList() {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': 'application/json'
                 // Aquí puedes incluir otras cabeceras requeridas por el servidor
-            }
+            },
+            body
         })
             .then((res) => res.json())
             .then((data) => setProducts(data.data))
