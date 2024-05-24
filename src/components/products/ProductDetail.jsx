@@ -5,8 +5,9 @@ export default function ProductDetail() {
 
     const { id } = useParams()
     //  EL TO STRING FALLA
-    const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-    // .replace('.', ',');
+    const eraseLastDot = (word) => { const arr = [...word]; arr[arr.lastIndexOf('.')] = ','; return arr.join(''); }
+    const toThousand = n => eraseLastDot(n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."))
+
     const pre = "111.1"
     const [loading, setLoading] = useState(true);
     let [product, setProduct] = useState({});
@@ -41,7 +42,7 @@ export default function ProductDetail() {
                         ${toThousand(product.price)}
                     </h2>
                     <h3 className="finalPrice text-5xl text-teal-600 font-semibold my-5">
-                        $ {toThousand(product.price * (100 - product.discount) / 100)}
+                        $ {toThousand((product.price * (100 - product.discount) / 100).toFixed(2))}
                     </h3>
                     <span className="text-red-600 text-xl font-semibold mr-3">
                         {product.discount} % OFF

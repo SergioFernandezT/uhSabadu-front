@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function ProductSmallCard({ id, name, image, discount, price }) {
   const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return (
-    <div className="container m-6  w-1/5 h-1/2">
+    
       <Link to={`/products/detail/${id}`}>
         <figure className="product-box_image">
           <img src={`/images/products/${image}`}
@@ -22,6 +22,5 @@ export default function ProductSmallCard({ id, name, image, discount, price }) {
           <i className="fas fa-truck"></i>
         </article>
       </Link >
-    </div>
   );
 }

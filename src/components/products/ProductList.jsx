@@ -1,4 +1,3 @@
-
 import ProductSmallCard from './ProductSmallCard';
 import { useEffect, useState, useRef } from "react";
 
@@ -26,14 +25,16 @@ export default function ProductList() {
                 <section className="flex items-center justify-center mt-4 flex-wrap">
                     {products.map((product) => {
                         return (
-                            <ProductSmallCard
-                                key={product.id}
-                                id={product.id}
-                                name={product.name}
-                                price={product.price}
-                                discount={product.discount}
-                                image={product.image}
-                            />);
+                            <div className="container m-6  w-1/5 h-1/2">
+                                <ProductSmallCard
+                                    key={product.id}
+                                    id={product.id}
+                                    name={product.name}
+                                    price={product.price}
+                                    discount={product.discount}
+                                    image={product.image}
+                                />
+                            </div>);
                     })}
                 </section>
             </div>
